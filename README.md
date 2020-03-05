@@ -9,8 +9,8 @@ Every day, a large amount of data is generated in different fields. Fusing such 
 <br> <b>Keywords:</b> data fusion, data integration, data granulation, entity recognition, spatial data
 
 <h2>Computer Code</h2>
-Name of code: GSDF (accessible on https://github.com/khodizadeh/GSDF),<br>
-First available: 2020,<br>
+<p>Name of code: GSDF (accessible on https://github.com/khodizadeh/GSDF)</p>
+<p>First available: March 2020 </p>
 Developer and contact address: M. Khodizadeh , m.khodizadeh@ec.iut.ac.ir<br>
 Hardware required:Intel® Core™ i3 2GHz,  RAM 4GB , HDD 500GB (Minimum configuration)<br>
 Software required: MS SQL Server 2016, Python 3.7 - Program language: SQL, Python <br>
