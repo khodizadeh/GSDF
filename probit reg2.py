@@ -1,0 +1,72 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Importing the dataset
+dataset = pd.read_csv('F2.csv')
+X = dataset.iloc[:, 0:2].values
+y = dataset.iloc[:, 2].values
+
+y=(y==1)
+
+
+
+
+from statsmodels.discrete.discrete_model import Probit
+
+import statsmodels.api as sm
+
+X = sm.add_constant(X)
+
+
+model = Probit(y, X.astype(float))
+probit_model = model.fit()
+
+print(probit_model.summary())
+
+
+
+
+print('-------------------- Predict ---------------------')
+dataset=pd.read_csv('selectedSimEval.txt')
+
+AX= dataset.iloc[:, 1:4].values
+
+
+AX=np.delete(AX,1, axis=1)
+
+AX = sm.add_constant(AX)
+
+
+
+Ay_pred = probit_model.predict(AX)
+
+
+
+
+Ay_pred=Ay_pred.reshape(len(Ay_pred),1)
+
+
+AX= dataset.iloc[:, 0:4].values
+
+AXy= np.concatenate((AX,Ay_pred), axis=1)
+
+
+
+
+pd.DataFrame(AXy).to_csv("ProbitReg2.csv")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
